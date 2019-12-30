@@ -1,5 +1,7 @@
 package com.goodnews.app.ws.goodnews.controllers;
 
+import com.goodnews.app.ws.goodnews.models.requests.UserDetailsRequestBody;
+import com.goodnews.app.ws.goodnews.models.responses.UserDetailsResponse;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,8 +14,8 @@ public class UserController {
     }
 
     @PostMapping
-    public String createUser() {
-        return "Create user";
+    public UserDetailsResponse createUser(@RequestBody UserDetailsRequestBody userDetails) {
+        return null;
     }
 
     @PutMapping
