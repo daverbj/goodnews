@@ -1,20 +1,17 @@
 package com.goodnews.app.ws.goodnews.io.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 @Entity(name = "user")
 public class UserEntity implements Serializable {
     @Id
     @GeneratedValue
     private long id;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String userId;
     @Column(nullable = false, length = 50)
     private String fullName;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
     private String password;

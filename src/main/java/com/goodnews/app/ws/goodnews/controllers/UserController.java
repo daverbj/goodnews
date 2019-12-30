@@ -24,10 +24,10 @@ public class UserController {
         UserDetailsResponse response = new UserDetailsResponse();
         UserDTO userDTO = new UserDTO();
         BeanUtils.copyProperties(userDetailsRequestBody, userDTO);
-
         UserDTO createdUser = userService.createUser(userDTO);
-
-        return null;
+        UserDetailsResponse userDetailsResponse = new UserDetailsResponse();
+        BeanUtils.copyProperties(createdUser, userDetailsResponse);
+        return userDetailsResponse;
     }
 
     @PutMapping
