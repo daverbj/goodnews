@@ -1,7 +1,10 @@
 package com.goodnews.app.ws.goodnews.controllers;
 
+import com.fasterxml.jackson.databind.util.BeanUtil;
 import com.goodnews.app.ws.goodnews.models.requests.UserDetailsRequestBody;
 import com.goodnews.app.ws.goodnews.models.responses.UserDetailsResponse;
+import com.goodnews.app.ws.goodnews.shared.dtos.UserDTO;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,7 +17,10 @@ public class UserController {
     }
 
     @PostMapping
-    public UserDetailsResponse createUser(@RequestBody UserDetailsRequestBody userDetails) {
+    public UserDetailsResponse createUser(@RequestBody UserDetailsRequestBody userDetailsRequestBody) {
+        UserDetailsResponse response = new UserDetailsResponse();
+        UserDTO userDTO = new UserDTO();
+        BeanUtils.copyProperties(userDetailsRequestBody, userDTO);
         return null;
     }
 
