@@ -3,7 +3,7 @@ package com.goodnews.app.ws.goodnews.controllers;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping(path = "${urlPrefix}/users")
 public class UserController {
 
     @GetMapping
